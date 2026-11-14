@@ -1,0 +1,18 @@
+{
+  "name": "vibescreen",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "src/desktop"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace src/desktop",
+    "build:backend": "dotnet publish src/backend/VibeScreen.Api -c Release -o dist/backend",
+    "build:host": "dotnet publish src/wallpaper-host/VibeScreen.WallpaperHost -c Release -o dist/wallpaper-host",
+    "host:proto": "dotnet run --project src/wallpaper-host/VibeScreen.WallpaperHost --"
+  },
+  "allowScripts": {
+    "electron@33.4.11": true,
+    "esbuild@0.25.12": true
+  }
+}
